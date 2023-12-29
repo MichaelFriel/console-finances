@@ -91,3 +91,12 @@ var finances = [
 
 console.log ("The total number of months included is " + finances.length)
 
+// What is the total profit/loss
+
+var totalSum =finances.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue[1]
+}, 0);
+
+console.log("The total profit for the duration is £" + totalSum);
+
+
