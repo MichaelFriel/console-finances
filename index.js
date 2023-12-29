@@ -87,10 +87,11 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-// How many months are included?
+// Financial Analysis title
 
 console.log("Financial Analysis\n------------------")
 
+// How many months are included?
 
 console.log ("The total number of months included is " + finances.length)
 
@@ -112,4 +113,15 @@ for (var month = 1; month < finances.length; month++) {
 }
 
 console.log("these are the differences between profit/loss on a month-by-month basis: " + differences); 
+
+var total = differences.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+
+
+var average = total / differences.length
+
+average = average.toFixed(2)
+
+console.log("Average Change: " + average)
 
