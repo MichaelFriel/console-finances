@@ -127,8 +127,40 @@ console.log("Average Change: " + average)
 
 // Biggest profit increase
 
-console.log("Biggest increase is " + Math.max(...differences));
+//console.log("Biggest increase is " + Math.max(...differences));
+
+var maxDifference = 0;
+var maxDifferenceMonth = "";
+
+for (var monthProfits = 1; monthProfits < differences.length; monthProfits++) {
+  var currentProfit = finances[monthProfits][1];
+    var previousProfit = finances[monthProfits - 1][1];
+    var difference = currentProfit - previousProfit;
+
+    if (difference > maxDifference) {
+        maxDifference = difference;
+        maxDifferenceMonth = finances[monthProfits][0];
+    }
+}
+
+console.log("Greatest increase in Profits/Losses: " + maxDifferenceMonth + " ($" + maxDifference + ")" );
 
 // Biggest profit descrease
 
-console.log("Biggest decrease is " + Math.min(...differences));
+var minDifference = 0;
+var minDifferenceMonth = "";
+
+for (var monthProfits = 1; monthProfits < differences.length; monthProfits++) {
+  var currentProfit = finances[monthProfits][1];
+    var previousProfit = finances[monthProfits - 1][1];
+    var difference = currentProfit - previousProfit;
+
+    if (difference < minDifference) {
+        minDifference = difference;
+        minDifferenceMonth = finances[monthProfits][0];
+    }
+}
+
+console.log("Greatest decrease in Profits/Losses: " + minDifferenceMonth + " ($" + minDifference + ")" );
+
+//console.log("Biggest decrease is " + Math.min(...differences));
