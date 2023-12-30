@@ -93,7 +93,7 @@ console.log("Financial Analysis\n------------------")
 
 // How many months are included?
 
-console.log ("The total number of months included is " + finances.length)
+console.log ("Total Months: " + finances.length)
 
 // What is the total profit/loss
 
@@ -101,7 +101,7 @@ var totalSum =finances.reduce(function (accumulator, currentValue) {
   return accumulator + currentValue[1]
 }, 0);
 
-console.log("The total profit for the duration is $" + totalSum);
+console.log("Total: $" + totalSum);
 
 // What is the average difference on a month-to-month basis?
 
@@ -111,8 +111,6 @@ for (var month = 1; month < finances.length; month++) {
   var diff = finances[month][1] - finances[month - 1][1];
   differences.push(diff);
 }
-
-//console.log("these are the differences between profit/loss on a month-by-month basis: " + differences); 
 
 var total = differences.reduce(function (accumulator, currentValue) {
   return accumulator + currentValue;
@@ -126,8 +124,6 @@ average = average.toFixed(2)
 console.log("Average Change: " + average)
 
 // Biggest profit increase
-
-//console.log("Biggest increase is " + Math.max(...differences));
 
 var maxDifference = 0;
 var maxDifferenceMonth = "";
@@ -162,5 +158,3 @@ for (var monthProfits = 1; monthProfits < differences.length; monthProfits++) {
 }
 
 console.log("Greatest decrease in Profits/Losses: " + minDifferenceMonth + " ($" + minDifference + ")" );
-
-//console.log("Biggest decrease is " + Math.min(...differences));
