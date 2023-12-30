@@ -112,7 +112,7 @@ for (var month = 1; month < finances.length; month++) {
   differences.push(diff);
 }
 
-console.log("these are the differences between profit/loss on a month-by-month basis: " + differences); 
+//console.log("these are the differences between profit/loss on a month-by-month basis: " + differences); 
 
 var total = differences.reduce(function (accumulator, currentValue) {
   return accumulator + currentValue;
@@ -125,3 +125,10 @@ average = average.toFixed(2)
 
 console.log("Average Change: " + average)
 
+// Biggest profit increase
+
+console.log("Biggest increase is " + Math.max(...differences));
+
+// Biggest profit descrease
+
+console.log("Biggest decrease is " + Math.min(...differences));
